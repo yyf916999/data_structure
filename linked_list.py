@@ -16,7 +16,8 @@ class DoubleLinkedList:
             self.head.prev = node
             node.next = self.head
         self.head = node
-
+        self.print()
+        print()
     def insertAfter(self, prev_node, data):
         node = Node(data)
         node.prev = prev_node
@@ -25,7 +26,7 @@ class DoubleLinkedList:
             prev_node.next.prev = node
         prev_node.next = node
         self.print()
-
+        print()
     def search(self,value):
         current = self.head
         while current:
@@ -38,11 +39,14 @@ class DoubleLinkedList:
         node = self.search(value)
         if node:
             print((self.head.value))
+            print(node.value)
             if self.head == node:
-                self.head == node.next
+                print("YY")
+                print(node.next.value)
+                self.head = node.next
                 print(self.head.value)
                 if node.next:
-                    print(node.next.value)
+                    #print(node.next.value)
                     node.next.prev = None
                 return
             node.prev.next = node.next
